@@ -1,0 +1,23 @@
+footer,
+footer nav {
+  background-color: #fff;
+  color: black;
+}
+
+footer {
+  align-self: stretch;  
+  display: flex;
+  flex-direction: column;
+}
+  
+.footer-nav {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.footer-copyright {
+  margin: 15px 0;
+  align-self: center;
+}

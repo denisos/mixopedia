@@ -1,0 +1,27 @@
+.main-nav {
+  background-color: #fff;
+  flex: 1;
+  flex-basis: 20%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 200px;
+  list-style-type: none;
+}
+
+.main-nav li {
+  padding: 10px;
+}
+
+.main-nav li a {
+  color: grey;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.main-nav .active {
+  color: rgb(55, 55, 185);
+  font-size: 22px;
+  border-bottom: 2px solid rgb(55, 55, 185);
+}
