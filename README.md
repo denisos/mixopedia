@@ -5,6 +5,8 @@ An app built with various common react tech: react-intl, react-router-dom, flexb
 ## Install and run
 
 ### install
+`nvm use`
+
 `yarn`
 
 ### run
