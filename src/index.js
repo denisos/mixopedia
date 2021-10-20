@@ -6,6 +6,9 @@ import './index.css';
 import App from './App';
 
 // basic setup as example for using react-intl
+// BUT you could just only import the file which matches navigator or fallback
+//  in cases where the language is set from browser (because app must reload)
+//
 import messages_de_de from "./translations/de-de.json";
 import messages_en_us from "./translations/en-us.json";
 import messages_es_mx from "./translations/es-mx.json";

@@ -1,7 +1,11 @@
 import Footer from '../../layout/Footer';
 import './LandingBody.css';
 
-function LandingBody() {
+interface LandingBodyProps {
+  type?: 'complex' | 'simple';
+}
+
+function LandingBody({ type }: LandingBodyProps) {
   return (
     <div className="landing-body">
       <main>
