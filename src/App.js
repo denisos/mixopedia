@@ -6,10 +6,10 @@ import {
 } from "react-router-dom";
 
 import './App.css';
-import MainNav from './components/MainNav';
-import PageTitle from './components/PageTitle';
-import HeaderBar from './components/HeaderBar';
-import LandingBody from './components/LandingBody';
+import MainNav from './layout/MainNav';
+import PageTitle from './layout/PageTitle';
+import HeaderBar from './layout/HeaderBar';
+import LandingBody from './components/landing/LandingBody';
 
 function App() {
   return (
