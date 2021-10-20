@@ -1,5 +1,5 @@
 # mixopedia
-An app built with various common react tech: react-intl, react-router-dom, flexbox, redux hooks, typescripe etc.
+An app built with various common react tech: react-intl, react-router-dom, flexbox, redux hooks, typescript, setup with a particular folder structure etc.
 
 
 ## Install and run
