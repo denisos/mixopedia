@@ -10,6 +10,8 @@ import MainNav from './layout/MainNav';
 import PageTitle from './layout/PageTitle';
 import HeaderBar from './layout/HeaderBar';
 import LandingBody from './components/landing/LandingBody';
+import Dashboard from './components/Dashboard';
+import SchemParser from "./components/schemaparser/SchemaParser";
 
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
               <Route path="/dashboard">
                 <Dashboard />
               </Route>
+              <Route path="/schemaparser">
+                <SchemParser />
+              </Route>
               <Route path="*">
                 <NoMatch />
               </Route>
@@ -56,13 +61,6 @@ function About() {
   );
 }
 
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
 
 function NoMatch() {
   let location = useLocation();

@@ -1,5 +1,6 @@
 {
   "nav.home": "Hogar",
   "nav.about": "Sobre",
-  "nav.dashboard": "Tablero"
+  "nav.dashboard": "Tablero",
+  "nav.schemaparser": "Analizador de esquema"
 }

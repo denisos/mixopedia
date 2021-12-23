@@ -1,0 +1,23 @@
+.toast {
+  display: flex;
+  border-radius: 4px;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toast-content {
+  color: black;
+}
+
+.toast.success {
+  border: 2px solid green;
+}
+
+.toast.error {
+  border: 2px solid red;
+
+}
+.toast.warning {
+  border: 2px solid yellow;
+}

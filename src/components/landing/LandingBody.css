@@ -2,21 +2,20 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: green;
+  /* background-color: green; */
 }
 
 main {
   flex: 1;
-  background-color: orange;
+  /* background-color: orange; */
   width: 100vw;
 }
 
 .call-outs-container {
-  /* max-width: 1400px; */
-  margin: 40px auto o auto;
   display: flex;
   /* align-items: stretch; */
   justify-content: space-between;
+
   /* flex-direction: row;
   flex-wrap: wrap; */
   flex-flow: row wrap;
@@ -42,7 +41,6 @@ main {
 .center-me-container {
   display: flex;
   justify-content: center;
-  margin: 40px auto o auto;
 }
 .center-me {
   width: 500px;

@@ -1,0 +1,53 @@
+
+.btn {
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.btnChildren {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary {
+  background-color: rgb(91, 91, 238);
+  color: white;
+}
+
+.primary:hover,
+.primary:active {
+  background-color: rgb(135, 135, 240);
+}
+
+.primary.disabled {
+  background-color: red;
+  cursor: default;
+}
+
+.secondary {
+  background-color: white;
+  color: black;
+}
+
+.large {
+  min-width: 100px;
+  padding: 10px 34px;
+  font-size: 18px;
+}
+
+.medium {
+  min-width: 80px;
+  padding: 10px 34px;
+  font-size: 16px;
+}
+
+.small {
+  min-width: 60px;
+  padding: 6px 18px;
+  font-size: 12px;
+}

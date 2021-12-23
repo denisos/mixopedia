@@ -20,6 +20,11 @@ function MainNav() {
           <FormattedMessage id="nav.dashboard" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/schemaparser">
+          <FormattedMessage id="nav.schemaparser" />
+        </NavLink>
+      </li>
     </ul>
   )
 }

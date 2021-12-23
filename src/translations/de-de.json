@@ -1,5 +1,6 @@
 {
   "nav.home": "Heimat",
   "nav.about": "Uber",
-  "nav.dashboard": "Armaturenbrett"
+  "nav.dashboard": "Armaturenbrett",
+  "nav.schemaparser": "Schemaparser"
 }
