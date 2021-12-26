@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+
+.pokemon-power-rankings {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

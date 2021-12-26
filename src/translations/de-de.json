@@ -2,5 +2,6 @@
   "nav.home": "Heimat",
   "nav.about": "Uber",
   "nav.dashboard": "Armaturenbrett",
-  "nav.schemaparser": "Schemaparser"
+  "nav.schemaparser": "Schemaparser",
+  "nav.pokemon": "Pokemon"
 }

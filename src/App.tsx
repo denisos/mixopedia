@@ -7,11 +7,12 @@ import {
 
 import './App.css';
 import MainNav from './layout/MainNav';
-import PageTitle from './layout/PageTitle';
+// import PageTitle from './layout/PageTitle';
 import HeaderBar from './layout/HeaderBar';
 import LandingBody from './components/landing/LandingBody';
 import Dashboard from './components/Dashboard';
-import SchemParser from "./components/schemaparser/SchemaParser";
+import SchemParser from './components/schemaparser/SchemaParser';
+import PokemonPowerRankings from './components/pokemon/PokemonPowerRankings';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
               </Route>
               <Route path="/schemaparser">
                 <SchemParser />
+              </Route>
+              <Route path="/pokemon">
+                <PokemonPowerRankings />
               </Route>
               <Route path="*">
                 <NoMatch />

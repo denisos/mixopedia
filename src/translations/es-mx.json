@@ -2,5 +2,6 @@
   "nav.home": "Hogar",
   "nav.about": "Sobre",
   "nav.dashboard": "Tablero",
-  "nav.schemaparser": "Analizador de esquema"
+  "nav.schemaparser": "Analizador de esquema",
+  "nav.pokemon": "Pokemon"
 }

@@ -25,6 +25,11 @@ function MainNav() {
           <FormattedMessage id="nav.schemaparser" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/pokemon">
+          <FormattedMessage id="nav.pokemon" />
+        </NavLink>
+      </li>
     </ul>
   )
 }
