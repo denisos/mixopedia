@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +13,9 @@ import HeaderBar from './layout/HeaderBar';
 import LandingBody from './components/landing/LandingBody';
 import Dashboard from './components/Dashboard';
 import SchemParser from './components/schemaparser/SchemaParser';
-import PokemonPowerRankings from './components/pokemon/PokemonPowerRankings';
+const PokemonPowerRankings = React.lazy(() =>
+  import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));
+
 
 function App() {
   return (
@@ -23,33 +26,34 @@ function App() {
       {/* <PageTitle /> */}
 
       <div className="body-container">
-        <Router>
-          <div className="router-container">
-            <MainNav />
+        <React.Suspense fallback={<div>Loading…</div>}>
+          <Router>
+            <div className="router-container">
+              <MainNav />
 
-            <Switch>
-              <Route exact path="/">
-                <LandingBody />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/dashboard">
-                <Dashboard />
-              </Route>
-              <Route path="/schemaparser">
-                <SchemParser />
-              </Route>
-              <Route path="/pokemon">
-                <PokemonPowerRankings />
-              </Route>
-              <Route path="*">
-                <NoMatch />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
-
+              <Switch>
+                <Route exact path="/">
+                  <LandingBody />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/dashboard">
+                  <Dashboard />
+                </Route>
+                <Route path="/schemaparser">
+                  <SchemParser />
+                </Route>
+                <Route path="/pokemon">
+                  <PokemonPowerRankings />
+                </Route>
+                <Route path="*">
+                  <NoMatch />
+                </Route>
+              </Switch>
+            </div>
+          </Router>
+        </React.Suspense>
       </div>
     </div>
   );
