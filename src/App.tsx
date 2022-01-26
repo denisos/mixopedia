@@ -13,6 +13,7 @@ import HeaderBar from './layout/HeaderBar';
 import LandingBody from './components/landing/LandingBody';
 import Dashboard from './components/Dashboard';
 import SchemParser from './components/schemaparser/SchemaParser';
+import ContextExample from './components/contextexample/ContextExample';
 const PokemonPowerRankings = React.lazy(() =>
   import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));
 
@@ -46,6 +47,9 @@ function App() {
                 </Route>
                 <Route path="/pokemon">
                   <PokemonPowerRankings />
+                </Route>
+                <Route path="/context">
+                  <ContextExample />
                 </Route>
                 <Route path="*">
                   <NoMatch />

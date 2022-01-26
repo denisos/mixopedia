@@ -3,5 +3,6 @@
   "nav.about": "Sobre",
   "nav.dashboard": "Tablero",
   "nav.schemaparser": "Analizador de esquema",
-  "nav.pokemon": "Pokemon"
+  "nav.pokemon": "Pokemon",
+  "nav.context": "Context"
 }

@@ -30,6 +30,11 @@ function MainNav() {
           <FormattedMessage id="nav.pokemon" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/context">
+          <FormattedMessage id="nav.context" />
+        </NavLink>
+      </li>
     </ul>
   )
 }

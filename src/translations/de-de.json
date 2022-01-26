@@ -3,5 +3,6 @@
   "nav.about": "Uber",
   "nav.dashboard": "Armaturenbrett",
   "nav.schemaparser": "Schemaparser",
-  "nav.pokemon": "Pokemon"
+  "nav.pokemon": "Pokemon",
+  "nav.context": "Context"
 }
