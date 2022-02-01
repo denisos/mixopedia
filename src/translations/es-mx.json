@@ -4,5 +4,6 @@
   "nav.dashboard": "Tablero",
   "nav.schemaparser": "Analizador de esquema",
   "nav.pokemon": "Pokemon",
-  "nav.context": "Context"
+  "nav.context": "Contexto",
+  "nav.patterns": "Patronas"
 }

@@ -88,7 +88,7 @@ export default function ContextExample() {
     <ThemeProvider>
       <UserProvider>
         <div className="contextexample-container">
-          <p>Context Example page, wrapped in a User Provider</p>
+          <h1>Context Example page, wrapped in a User Provider</h1>
 
           <Level1 />
 

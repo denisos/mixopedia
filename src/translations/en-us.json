@@ -4,5 +4,6 @@
   "nav.dashboard": "Dashboard",
   "nav.schemaparser": "Schema parser",
   "nav.pokemon": "Pokemon",
-  "nav.context": "Context"
+  "nav.context": "Context",
+  "nav.patterns": "Patterns"
 }

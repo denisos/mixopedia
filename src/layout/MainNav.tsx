@@ -35,6 +35,11 @@ function MainNav() {
           <FormattedMessage id="nav.context" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/patterns">
+          <FormattedMessage id="nav.patterns" />
+        </NavLink>
+      </li>
     </ul>
   )
 }

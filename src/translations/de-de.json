@@ -4,5 +4,6 @@
   "nav.dashboard": "Armaturenbrett",
   "nav.schemaparser": "Schemaparser",
   "nav.pokemon": "Pokemon",
-  "nav.context": "Context"
+  "nav.context": "Kontext",
+  "nav.patterns": "Muster"
 }
