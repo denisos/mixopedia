@@ -31,11 +31,13 @@ This is a bootstrapped create react app so all the usual applies with that
 
 ## Code splitting
 Scaffolded as a create-react-app which uses [react-scripts](https://github.com/facebook/create-react-app/blob/main/packages/react-scripts/config/webpack.config.js#L225) webpack config which is already configured with "chunkFilename" property.
+
 `chunkFilename: isEnvProduction
         ? 'static/js/[name].[contenthash:8].chunk.js'
         : isEnvDevelopment && 'static/js/[name].chunk.js',`
 
 I use React.lazy() to load the PokemonPowerRankings component:
+
 `const PokemonPowerRankings = React.lazy(() => 
   import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));`
 
