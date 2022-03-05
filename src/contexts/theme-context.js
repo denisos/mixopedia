@@ -4,7 +4,8 @@ export const ThemeContext = createContext();
 
 function ThemeProvider(props) {
   const theme = {
-    name: "light"
+    name: "light",
+    toggleTheme: (newTheme) => { }
   }
 
   return <ThemeContext.Provider value={theme} {...props} />

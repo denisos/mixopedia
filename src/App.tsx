@@ -15,8 +15,9 @@ import Dashboard from './components/Dashboard';
 import SchemParser from './components/schemaparser/SchemaParser';
 import ContextExample from './components/contextexample/ContextExample';
 import Patterns from './components/patterns/Patterns';
-const PokemonPowerRankings = React.lazy(() =>
-  import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));
+import Fetchin from './components/fetchexamples/Fetchin';
+// const PokemonPowerRankings = React.lazy(() =>
+//   import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));
 
 
 function App() {
@@ -46,15 +47,23 @@ function App() {
                 <Route path="/schemaparser">
                   <SchemParser />
                 </Route>
+{/* 
                 <Route path="/pokemon">
                   <PokemonPowerRankings />
-                </Route>
+                </Route> */}
+
                 <Route path="/context">
                   <ContextExample />
                 </Route>
+
                 <Route path="/patterns">
                   <Patterns />
                 </Route>
+
+                <Route path="/fetchin">
+                  <Fetchin />
+                </Route>
+
                 <Route path="*">
                   <NoMatch />
                 </Route>

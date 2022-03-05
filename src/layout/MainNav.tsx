@@ -40,6 +40,11 @@ function MainNav() {
           <FormattedMessage id="nav.patterns" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/fetchin">
+          <FormattedMessage id="nav.fetchin" />
+        </NavLink>
+      </li>
     </ul>
   )
 }
