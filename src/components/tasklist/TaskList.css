@@ -1,0 +1,97 @@
+
+.notion-frame { 
+  display: flex;
+  flex-grow: 0; 
+  flex-shrink: 1;
+  flex-direction: column;
+  width: 1643px;
+  height: calc(100vh - 40px);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.notion-scroller {
+  overflow: auto;
+  display: flex;
+  flex-grow: 1; 
+  flex-shrink: 1;
+  flex-direction: column;
+}
+
+.notion-header-container {
+  padding-right: 10px;
+  padding-left: 96px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.notion-header-container-title {
+  display: flex;
+}
+
+.notion-record-icon {
+  user-select: none; 
+  transition: background 20ms ease-in 0s; 
+  cursor: pointer; display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 36px; 
+  width: 36px; 
+  border-radius: 3px; 
+  flex-shrink: 0; 
+  position: relative; 
+  z-index: 1; 
+  margin: 8px 8px 0px 3px; 
+  align-self: flex-start; 
+  pointer-events: auto;
+}
+
+.notion-focusable {
+
+}
+
+.icon-image-container {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 36px; 
+  width: 36px;
+  color: black;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 40px;
+}
+
+.icon-image {
+  line-height: 1em; 
+  white-space: nowrap;
+}
+
+.title-container {
+  color: rgb(55, 53, 47);
+  font-weight: 700;
+  line-height: 1.2em;
+  font-size: 40px;
+  cursor: text;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  max-width: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  caret-color: rgb(55, 53, 47);
+  padding: 3px 2px;
+}
+
+.header-body-text {
+  margin-bottom: 12px;
+}
+
+.menu-bar {
+  margin: 0 96px 0 96px;
+}
+

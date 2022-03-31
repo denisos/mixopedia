@@ -6,5 +6,6 @@
   "nav.pokemon": "Pokemon",
   "nav.context": "Context",
   "nav.patterns": "Patterns",
-  "nav.fetchin": "Fetchin"
+  "nav.useeffect": "useEffect",
+  "nav.tasklist": "Task List"
 }

@@ -9,7 +9,7 @@ const TitleRPAC = (props: any) => props.children();
 const PropsTest = ({name, address}: { name: string, address: string}) => <h1>hello {name} {address}</h1>
 
 const ComponentRP = (props: any) => {
-  const [ data, setData ] = React.useState({ name: "render prop"})
+  const [ data ] = React.useState({ name: "render prop"})
   // do some logic and then pass result to children
   return props.children(data);
 }

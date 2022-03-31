@@ -19,7 +19,7 @@ const Level1 = () => {
 }
 
 const Level2 = () => {
-  const [user] = useUser();
+  const [ user ] = useUser();
   console.log("render level2")
 
   useEffect(() => {

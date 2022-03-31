@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
-import Button from "../button/Button";
-import Toast from '../toast/Toast';
+import Button from "../../sharedcomponents/button/Button";
+import Toast from '../../sharedcomponents/toast/Toast';
 import { validate } from '../../utils/utils';
 
 import './SchemaParser.css';

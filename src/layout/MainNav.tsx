@@ -41,8 +41,13 @@ function MainNav() {
         </NavLink>
       </li>
       <li>
-        <NavLink exact to="/fetchin">
-          <FormattedMessage id="nav.fetchin" />
+        <NavLink exact to="/useEffect">
+          <FormattedMessage id="nav.useeffect" />
+        </NavLink>
+      </li>
+      <li>
+        <NavLink exact to="/tasklist">
+          <FormattedMessage id="nav.tasklist" />
         </NavLink>
       </li>
     </ul>

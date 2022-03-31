@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Button from '../button/Button';
+import Button from '../../sharedcomponents/button/Button';
 import { useFetch } from '../../hooks/useFetch';
 
 export default function Fetchin() {
