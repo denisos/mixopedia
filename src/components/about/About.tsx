@@ -3,8 +3,11 @@ import { useCallback, useState, useEffect, useMemo } from 'react';
 import DebouncedInput from '../../sharedcomponents/debouncedInput/DebouncedInput';
 import { useDebounceValue, useDebounceFunction } from '../../hooks/useDebounce';
 
+import './About.css';
 
 export default function About() {
+  const [ pollChoice, setPollChoice ] = useState(-1);
+
   const [name, setName] = useState({
     value: "",
     hasError: false, 
@@ -116,6 +119,13 @@ export default function About() {
     console.log("submitting name ", name, address);
   }
 
+  // for poll
+  const handleSatisfactionOnClick = (e: any) => {
+    console.log("handleSatisfactionOnClick ", e);
+    console.log("handleSatisfactionOnClick ", e?.target?.id);
+    console.log("handleSatisfactionOnClick ", e?.currentTarget);
+  }
+
   return (
     <div>
       <h2>About</h2>
@@ -172,207 +182,51 @@ export default function About() {
 
       <a href="https://www.codingdeft.com/posts/react-onblur-onchange/">interesting post </a>
 
-      {/* <div className="about-container" style={{}}>
-        <div className="about-select-list" style={{backgroundColor: "magenta" }}>
 
+      <div className="about-container" style={{display: "flex", justifyContent: "space-between" }}>
+        <div className="about-select-list" style={{backgroundColor: "magenta"}}>
+          An about select list
         </div>
-        <div className="about-select-list"  style={{backgroundColor: "lime" }}>
-          
+        <div className="about-select-list"  style={{backgroundColor: "lime"  }}>
+          Another about selectlist
         </div>
-      </div> */}
+        <div className="about-select-list"  style={{backgroundColor: "lime"  }}>
+          A third selectlist
+        </div>
+      </div>
+
+      <div className="poll-container">
+
+        <h2>Based on your overall experience, how satisfied were you with Palisades Tahoe?</h2>
+
+        <div className="poll-body">
+          <section>
+            <span className="poll-body-prompt-start">Not at all satisfied</span>
+            <span className="poll-body-prompt-end">Extremely satisfied</span>
+          </section>
+
+          <div className="poll-options">
+            <div id="zero" className="poll-option-box" onClick={() => handleSatisfactionOnClick("zero")}>
+              <div className="poll-option">0</div>
+            </div>
+            <div id="one" className="poll-option-box" onClick={handleSatisfactionOnClick}>
+              <div className="poll-option">1</div>
+            </div>
+            <div id="two" className="poll-option-box" onClick={handleSatisfactionOnClick}>
+              <div className="poll-option">2</div>
+            </div>
+            <div id="three" className="poll-option-box" onClick={handleSatisfactionOnClick}>
+              <div className="poll-option selected">3</div>
+            </div>
+            <div id="four" className="poll-option-box" onClick={handleSatisfactionOnClick}>
+              <div className="poll-option">4</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
     </div>
 
   );
 }
-
-
-/*
-// let timerId:any;
-
-
-
-export default function About() {
-  const [name, setName] = useState({
-    value: "",
-    hasError: false, 
-    touched: false
-  });
-  const [address, setAddress] = useState({
-    value: "",
-    hasError: false
-  });
-
-  const debounce = (callback: (val: any) => void, delay = 600) => {
-    console.log("invoking debounce");
-    let timerId:any;
-    return () => {
-      if (timerId) {
-        clearTimeout(timerId);
-        console.log("debounce clear timer, then setup timer");
-      }
-      timerId = setTimeout(callback, delay);
-    }
-  }
-
-  const callAddressApi = (address:any) => {
-    console.log("execute debounced api call here with addr ", address);
-  }
-
-  const debouncedCallAddressApi = useCallback(debounce(callAddressApi), []);
-
-
-  const handleOnChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("onchange name");
-    const newName = e.target.value;
-
-    setName(current => ({
-      ...current,
-      value: newName,
-      hasError: newName?.length === 0
-    }));
-  }
-
-  const handleOnChangeAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newAddress = e.target.value;
-    setAddress(current => ({
-      ...current,
-      value: newAddress,
-      hasError: newAddress?.length === 0
-    }));
-
-    debouncedCallAddressApi();
-
-    // if (timerId) {
-    //   clearTimeout(timerId);
-    //   console.log("onchange address, clear timer");
-    // }
-
-    // timerId = setTimeout(() => {
-    //   console.log("execute debounced api call here with addr ", newAddress);
-    // }, 600);
-  };
-
-
-
-  const handleOnBlurName = (e: React.FocusEvent<HTMLInputElement>) => {
-    setName(current => ({
-      ...current,
-      touched: true
-    }));
-  }
-
-  const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    console.log("submitting name ", name, address);
-  }
-
-  // console.log("address & name is ", address, name);
-*/
-
-
-/*
-
-// let timerId:any;
-
-
-
-export default function About() {
-  const [name, setName] = useState({
-    value: "",
-    hasError: false, 
-    touched: false
-  });
-  const [address, setAddress] = useState({
-    value: "defaultAdd",
-    hasError: false
-  });
-
-  const debounce = (callback: (val: any) => void, delay = 600) => {
-    console.log("invoking debounce");
-    let timerId:any;
-    return () => {
-      if (timerId) {
-        clearTimeout(timerId);
-        console.log("debounce clear timer, then setup timer");
-      }
-      timerId = setTimeout(callback, delay);
-    }
-  }
-
-  const callAddressApi = () => {
-    console.log("execute debounced api call here with addr ", address);
-  }
-
-  const debouncedCallAddressApi = useCallback(debounce(callAddressApi), []);
-
-
-  const handleOnChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("onchange name");
-    const newName = e.target.value;
-
-    setName(current => ({
-      ...current,
-      value: newName,
-      hasError: newName?.length === 0
-    }));
-  }
-
-  const handleOnChangeAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newAddress = e.target.value;
-    setAddress(current => ({
-      ...current,
-      value: newAddress,
-      hasError: newAddress?.length === 0
-    }));
-
-    debouncedCallAddressApi();
-
-    // if (timerId) {
-    //   clearTimeout(timerId);
-    //   console.log("onchange address, clear timer");
-    // }
-
-    // timerId = setTimeout(() => {
-    //   console.log("execute debounced api call here with addr ", newAddress);
-    // }, 600);
-  };
-
-
-
-  const handleOnBlurName = (e: React.FocusEvent<HTMLInputElement>) => {
-    setName(current => ({
-      ...current,
-      touched: true
-    }));
-  }
-
-  const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    console.log("submitting name ", name, address);
-  }
-
-  // console.log("address & name is ", address, name);
-
-  return (
-    <div>
-      <h2>About</h2>
-
-      <form onSubmit={onSubmitForm}>
-        <label>Name 
-          <input type="text" value={name.value} onChange={handleOnChangeName} onBlur={handleOnBlurName}/>
-          {name.touched && name.hasError && <div>Oops name error</div>}
-        </label>
-
-        <label>Address 
-          <input type="text" value={address.value} onChange={handleOnChangeAddress} />
-          {address.hasError && <div>Oops addr error</div>}
-        </label>
-
-        <button type="submit" className="button primary" style={{display: "block"}}>Submit</button>
-      </form>
-
-
-*/
