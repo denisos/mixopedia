@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
 }
 
-.body-container {
+.content-container {
   display: flex;
   height: 100vh;
 }
@@ -23,4 +23,9 @@ body {
 
 .router-container {
   display: flex;
+}
+
+.body-container {
+  margin: 0 auto;
+  max-width: 768px;
 }

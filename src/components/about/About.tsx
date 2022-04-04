@@ -119,12 +119,6 @@ export default function About() {
     console.log("submitting name ", name, address);
   }
 
-  // for poll
-  const handleSatisfactionOnClick = (e: any) => {
-    console.log("handleSatisfactionOnClick ", e);
-    console.log("handleSatisfactionOnClick ", e?.target?.id);
-    console.log("handleSatisfactionOnClick ", e?.currentTarget);
-  }
 
   return (
     <div>
@@ -193,37 +187,6 @@ export default function About() {
         <div className="about-select-list"  style={{backgroundColor: "lime"  }}>
           A third selectlist
         </div>
-      </div>
-
-      <div className="poll-container">
-
-        <h2>Based on your overall experience, how satisfied were you with Palisades Tahoe?</h2>
-
-        <div className="poll-body">
-          <section>
-            <span className="poll-body-prompt-start">Not at all satisfied</span>
-            <span className="poll-body-prompt-end">Extremely satisfied</span>
-          </section>
-
-          <div className="poll-options">
-            <div id="zero" className="poll-option-box" onClick={() => handleSatisfactionOnClick("zero")}>
-              <div className="poll-option">0</div>
-            </div>
-            <div id="one" className="poll-option-box" onClick={handleSatisfactionOnClick}>
-              <div className="poll-option">1</div>
-            </div>
-            <div id="two" className="poll-option-box" onClick={handleSatisfactionOnClick}>
-              <div className="poll-option">2</div>
-            </div>
-            <div id="three" className="poll-option-box" onClick={handleSatisfactionOnClick}>
-              <div className="poll-option selected">3</div>
-            </div>
-            <div id="four" className="poll-option-box" onClick={handleSatisfactionOnClick}>
-              <div className="poll-option">4</div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
     </div>

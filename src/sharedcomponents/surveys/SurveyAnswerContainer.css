@@ -1,0 +1,24 @@
+.survey-answer-container {
+  margin: 10px;
+  margin-bottom: 50px;
+  color: #213144;
+  font-family: Open Sans,Arial,sans-serif;
+}
+.survey-answer-container h2 {
+  font-size: 28px;
+  line-height: 38px;
+  color: #213144;
+  font-weight: 400;
+}
+
+.survey-answer-container-body {
+  width: 600px;
+}
+.survey-answer-container-body section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.survey-answer-container-body section span {
+  font-size: 14px;
+}

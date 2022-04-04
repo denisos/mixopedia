@@ -50,6 +50,11 @@ function MainNav() {
           <FormattedMessage id="nav.tasklist" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/formcontrols">
+          <FormattedMessage id="nav.formcontrols" />
+        </NavLink>
+      </li>
     </ul>
   )
 }

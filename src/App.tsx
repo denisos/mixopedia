@@ -18,6 +18,7 @@ import Patterns from './components/patterns/Patterns';
 import Fetchin from './components/fetchexamples/Fetchin';
 import TaskList from './components/tasklist/TaskList';
 import About from './components/about/About';
+import Forms from './components/forms/Forms';
 
 const PokemonPowerRankings = React.lazy(() =>
   import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));
@@ -31,7 +32,7 @@ function App() {
 
       {/* <PageTitle /> */}
 
-      <div className="body-container">
+      <div className="content-container">
         <React.Suspense fallback={<div>Loading…</div>}>
           <Router>
             <div className="router-container">
@@ -69,6 +70,10 @@ function App() {
 
                 <Route path="/tasklist">
                   <TaskList />
+                </Route>
+
+                <Route path="/formcontrols">
+                  <Forms />
                 </Route>
 
                 <Route path="*">

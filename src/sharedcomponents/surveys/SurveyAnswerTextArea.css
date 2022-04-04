@@ -1,0 +1,28 @@
+
+.survey-answer-text-area-container {
+  border: 1px solid #dae0ea;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.survey-answer-text-area {
+  width: 100%;
+  min-height: 25px;
+  resize: none;
+  padding: 10px;
+  font-size: 18px;
+  box-sizing: border-box;
+  font-family: Open Sans,Arial,sans-serif;
+  border:0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.survey-answer-text-area-container:hover {
+  /* border: 2px solid #1b6ec2; */
+}
+
+.survey-answer-text-area:hover {
+  border: none;
+}

@@ -1,0 +1,25 @@
+
+.poll-container {
+  margin: 10px;
+  margin-bottom: 50px;
+  color: #213144;
+  font-family: Open Sans,Arial,sans-serif;
+}
+.poll-container h2 {
+  font-size: 28px;
+  line-height: 38px;
+  color: #213144;
+  font-weight: 400;
+}
+
+.poll-body {
+  width: 600px;
+}
+.poll-body section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.poll-body section span {
+  font-size: 14px;
+}

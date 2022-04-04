@@ -7,5 +7,7 @@
   "nav.context": "Context",
   "nav.patterns": "Patterns",
   "nav.useeffect": "useEffect",
-  "nav.tasklist": "Task List"
+  "nav.tasklist": "Task List",
+  "nav.formcontrols": "Forms",
+  "nav.debouncing": "Debouncing"
 }
