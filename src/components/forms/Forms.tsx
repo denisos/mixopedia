@@ -16,21 +16,21 @@ const pollOptionData = {
 
 
 export default function Forms() {
-  const [ choice, setChoice ] = useState();
-  const [ reasonsExplanation, setReasonsExplanation ] = useState();
+  const [ choice, setChoice ] = useState<string>();
+  const [ reasonsExplanation, setReasonsExplanation ] = useState<string>();
 
 
-  const handleSatisfactionOnClick = (e: any) => {
+  const handleSatisfactionOnClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log("handleSatisfactionOnClick ", e?.target?.value);
     setChoice(e.target.value);
   }
 
-  const handleReasonsExplanationChange = (e: any) => {
+  const handleReasonsExplanationChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     console.log("handleReasonsExplanationChange ", e?.target?.value);
     setReasonsExplanation(e.target.value);
   }
 
-  const handleOnClickSubmit = (e: any) => {
+  const handleOnClickSubmit = (e: React.UIEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log("handleOnClickSubmit submitting with values: ", choice, reasonsExplanation);
   }
@@ -39,10 +39,8 @@ export default function Forms() {
   return (
     <div className="body-container">    
 
-      <SurveyAnswerContainer title={pollOptionData.title}  >
-        
+      <SurveyAnswerContainer title={pollOptionData.title}>
         <SurveyAnswerRankExclusiveChoices {...pollOptionData} choice={choice} onChange={handleSatisfactionOnClick} />
-
       </SurveyAnswerContainer>
 
       <SurveyAnswerContainer title="Please tell us the reasons for your scores."  >
@@ -50,7 +48,7 @@ export default function Forms() {
       </SurveyAnswerContainer>
 
       <Button type="submit" theme="primary" size="large" onClick={handleOnClickSubmit}>Submit</Button>
-      
+
     </div>
   );
 }
