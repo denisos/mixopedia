@@ -42,16 +42,20 @@ export default function SurveyAnswerTextArea({
   }
 
   return (
-    <div className="survey-answer-text-area-container">
-      <textarea name={name}
-        ref={textAreaRef}
-        className="survey-answer-text-area" 
-        onChange={handleOnChangeContent} 
-        value={value} 
-        maxLength={maxLength}
-        onKeyUp={autoGrow}
-      />
-      <span>{length}</span>
+    <div className="survey-answer-text-area-container-box">
+      <div className="survey-answer-text-area-container">
+        <textarea name={name}
+          ref={textAreaRef}
+          className="survey-answer-text-area" 
+          onChange={handleOnChangeContent} 
+          value={value} 
+          maxLength={maxLength}
+          onKeyUp={autoGrow}
+        />
+      </div>
+      <div className="survey-answer-text-area-count">
+        <span>{length}</span>
+      </div>
     </div>
   );
 }

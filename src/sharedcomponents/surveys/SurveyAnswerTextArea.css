@@ -1,3 +1,7 @@
+.survey-answer-text-area-container-box {
+  display: flex;
+  flex-direction: column;
+}
 
 .survey-answer-text-area-container {
   border: 1px solid #dae0ea;
@@ -5,6 +9,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* .survey-answer-text-area-container:hover {
+  box-shadow: 0 0 0 2px #1b6ec2;
+  border: 2px solid #1b6ec2;
+  box-sizing: border-box;
+} */
 
 .survey-answer-text-area {
   width: 100%;
@@ -19,10 +29,23 @@
   overflow: hidden;
 }
 
-.survey-answer-text-area-container:hover {
-  /* border: 2px solid #1b6ec2; */
+/* .survey-answer-text-area-container:hover {
+  border: 2px solid #1b6ec2;
+} */
+
+.survey-answer-text-area:focus {
+  /* border: 2px solid #1b6ec2; 
+  outline: none !important;
+  box-sizing: border-box; */
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, 
+  rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, 
+  rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
-.survey-answer-text-area:hover {
-  border: none;
+.survey-answer-text-area-count {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  margin-top: 4px;
 }
+

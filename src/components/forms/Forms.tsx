@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Prompt } from "react-router-dom";
+
 import SurveyAnswerRankExclusiveChoices from '../../sharedcomponents/surveys/SurveyAnswerRankExclusiveChoices';
 import SurveyAnswerContainer from '../../sharedcomponents/surveys/SurveyAnswerContainer';
 import SurveyAnswerTextArea from '../../sharedcomponents/surveys/SurveyAnswerTextArea';
@@ -19,6 +21,9 @@ export default function Forms() {
   const [ choice, setChoice ] = useState<string>();
   const [ reasonsExplanation, setReasonsExplanation ] = useState<string>();
 
+  // true if submit pressed, just simple example of using with reactrouter Prompt
+  const [ isDirty, setIsDirty ] = useState(false);
+
 
   const handleSatisfactionOnClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log("handleSatisfactionOnClick ", e?.target?.value);
@@ -32,6 +37,7 @@ export default function Forms() {
 
   const handleOnClickSubmit = (e: React.UIEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setIsDirty(true);
     console.log("handleOnClickSubmit submitting with values: ", choice, reasonsExplanation);
   }
 
@@ -49,6 +55,10 @@ export default function Forms() {
 
       <Button type="submit" theme="primary" size="large" onClick={handleOnClickSubmit}>Submit</Button>
 
+      <Prompt
+        when={!isDirty}
+        message="Are you sure you want to leave?"
+      />
     </div>
   );
 }
