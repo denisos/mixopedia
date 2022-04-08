@@ -3,11 +3,12 @@ import { useCallback, useState, useEffect, useMemo } from 'react';
 import DebouncedInput from '../../sharedcomponents/debouncedInput/DebouncedInput';
 import { useDebounceValue, useDebounceFunction } from '../../hooks/useDebounce';
 
+import TextField from '../../sharedcomponents/textField/TextField';
+import Button from '../../sharedcomponents/button/Button';
+
 import './About.css';
 
 export default function About() {
-  const [ pollChoice, setPollChoice ] = useState(-1);
-
   const [name, setName] = useState({
     value: "",
     hasError: false, 
@@ -15,7 +16,8 @@ export default function About() {
   });
   const [address, setAddress] = useState({
     value: "",
-    hasError: false
+    hasError: false,
+    touched: false
   });
   const [query, setQuery] = useState('');
 
@@ -38,7 +40,8 @@ export default function About() {
     setAddress(current => ({
       ...current,
       value: newAddress,
-      hasError: newAddress?.length === 0
+      hasError: newAddress?.length === 0,
+      touched: true
     }));
 
     // could just handle it all inside the handler, but i think the reactive effect below is superior
@@ -130,18 +133,27 @@ export default function About() {
           {name.touched && name.hasError && <div>Oops name error</div>}
         </label>
 
-        <label>Address 
-          <input type="text" value={address.value} onChange={handleOnChangeAddress} />
-          {address.hasError && <div>Oops addr error</div>}
-        </label>
+        <TextField id="address" 
+          label="Address" 
+          helperText="Helper text" 
+          value={address.value} 
+          onChange={handleOnChangeAddress} 
+          error={address.touched && address.hasError}
+          className="about-textfield"
+        />
 
-        <label>Search DebouncedInput
+        <TextField id="city" 
+          label="City" 
+        />  
+
+
+        {/* <label>Search DebouncedInput
           <DebouncedInput onDebouncedChange={handleonOnDebouncedSearchChange} />
         </label>
 
         <label>Query DebouncedInput
           <DebouncedInput onDebouncedChange={handleonOnDebouncedQueryChange} />
-        </label>
+        </label> */}
 
         <label>Query useDebounceValue 
           <input 
@@ -151,7 +163,10 @@ export default function About() {
           />
         </label>
 
-        <button type="submit" className="button primary" style={{display: "block"}}>Submit</button>
+        <div>
+          <Button type="submit" theme="primary" size="medium">Submit</Button>
+        </div>
+
       </form>
 
       <p>reactjs onChange in inputs works differently to plain javascript onchange input event.</p> 
@@ -171,7 +186,7 @@ export default function About() {
         <li>you could also just setup a timer in a handleOnChange method, but I think a custom useEffect is better</li>
         <li>a useDebouncedValue custom hook</li>
         <li>a useDebouncedFunction custom hook</li>
-        <li>a DebouncedInput component</li>
+        <li>a DebouncedInput component (not such a good idea since reruns on every render)</li>
       </ol>   
 
       <a href="https://www.codingdeft.com/posts/react-onblur-onchange/">interesting post </a>

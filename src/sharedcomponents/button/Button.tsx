@@ -9,7 +9,7 @@ interface ButtonProps {
   size?: 'large' | 'medium' | 'small';
   testid?: string;
   type: 'button' | 'reset' | 'submit';
-  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   children: string;
 }
 
