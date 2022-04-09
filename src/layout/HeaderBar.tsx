@@ -4,7 +4,7 @@ import './HeaderBar.css';
 function HeaderBar()  {
   return (
     <header className="header">
-      <h2>Header stuff</h2>
+      <h2>Sticky Header here</h2>
     </header>
   )
 }
