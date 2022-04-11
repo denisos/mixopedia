@@ -159,15 +159,15 @@ export default function Forms() {
     <div className="body-container">    
       <form onSubmit={onSubmitForm}>
 
-      <SurveyAnswerContainer title={pollOptionData.title}>
-        <SurveyAnswerRankExclusiveChoices {...pollOptionData} choice={choice} onChange={handleSatisfactionOnClick} />
-      </SurveyAnswerContainer>
+        <SurveyAnswerContainer title={pollOptionData.title}>
+          <SurveyAnswerRankExclusiveChoices {...pollOptionData} choice={choice} onChange={handleSatisfactionOnClick} />
+        </SurveyAnswerContainer>
 
-      <SurveyAnswerContainer title="Please tell us the reasons for your scores."  >
-        <SurveyAnswerTextArea value={reasonsExplanation} onChange={handleReasonsExplanationChange} />
-      </SurveyAnswerContainer>
+        <SurveyAnswerContainer title="Please tell us the reasons for your scores."  >
+          <SurveyAnswerTextArea value={reasonsExplanation} onChange={handleReasonsExplanationChange} />
+        </SurveyAnswerContainer>
 
-      <label>Name 
+        <label>Name 
           <input type="text" value={name.value} onChange={handleOnChangeName} onBlur={handleOnBlurName}/>
           {name.touched && name.hasError && <div>Oops name error</div>}
         </label>
@@ -203,9 +203,9 @@ export default function Forms() {
         </label>
 
 
-      <div>
-        <Button type="submit" theme="primary" size="large">Submit</Button>
-      </div>
+        <div>
+          <Button type="submit" theme="primary" size="large">Submit</Button>
+        </div>
 
       </form>
 
