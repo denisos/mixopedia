@@ -189,6 +189,18 @@ export default function TaskList() {
                 + New
               </a>
             </div>
+
+            <div className="list-list">
+              <div className="task-title">
+                Done
+              </div>
+
+              {taskData.filter(isDone).map((task) => (
+                <a className="task-card" key={task.id} href="/#">
+                {task.title}
+                </a>
+              ))}
+            </div>
           </div>
 
         </div>

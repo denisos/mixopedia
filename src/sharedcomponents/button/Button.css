@@ -51,3 +51,8 @@
   padding: 6px 18px;
   font-size: 12px;
 }
+
+/*
+  prefer button styled a link over empty anchor for a11y
+  https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-is-valid.md
+*/
