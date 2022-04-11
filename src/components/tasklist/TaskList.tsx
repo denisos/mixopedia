@@ -1,5 +1,53 @@
 import './TaskList.css'
 
+const taskData = [
+  {
+    id: 'ab1788998zz',
+    title: 'wake up',
+    state: 'to-do',
+    created: '01012022'
+  },
+  {
+    id: 'p11788998rr',
+    title: 'cook breakfast',
+    state: 'to-do',
+    created: '01012022'
+  },
+  {
+    id: 'uu11788998rr',
+    title: 'serve & eat breakfast',
+    state: 'to-do',
+    created: '01012022'
+  },
+  {
+    id: 'ff11788998rr',
+    title: 'set alarm',
+    state: 'doing',
+    created: '01012022',
+    started: '01012022'
+  },
+  {
+    id: 'mku11788998rr',
+    title: 'buy food',
+    state: 'done',
+    created: '01012022',
+    started: '01012022',
+    completed: '01012022'
+  },
+  {
+    id: 'miuyhh11788998rr',
+    title: 'go to grocery store',
+    state: 'done',
+    created: '01012022',
+    started: '01012022',
+    completed: '01012022'
+  }
+];
+
+const isToDo = (task: any) => task.state === 'to-do';
+const isInProgress = (task: any) => task.state === 'doing';
+const isDone = (task: any) => task.state === 'done';
+
 export default function TaskList() {
   return (
     <div className="notion-frame">
@@ -19,7 +67,7 @@ export default function TaskList() {
             </div>
           </div>
 
-          <div className="header-body-text" contentEditable="true">
+          <div className="header-body-text">
             <div>
             Use this template to track your personal tasks. 
             Click <span className="text-action-link">New</span>
@@ -38,7 +86,7 @@ export default function TaskList() {
             </div>
             <div className="view-choice">
               <span className="icon"></span>
-              <div className="view-text">Table</div>
+              <div className="view-text">Table View</div>
             </div>
           </div>
 
@@ -54,6 +102,53 @@ export default function TaskList() {
           </div>
         </div>
 
+
+        <div className="notion-main-tasks-container">
+          <div className="notion-main-tasks-column-list">
+            <div className="task-title">
+              To-dos
+            </div>
+
+            {taskData.filter(isToDo).map((task) => (
+              <a className="task-card" key={task.id} href="/#">
+              {task.title}
+              </a>
+            ))}
+
+            <a className="task-add" href="/#">
+              + New
+            </a>
+          </div>
+
+          <div className="notion-main-tasks-column-list">
+            <div className="task-title">
+              In Progress
+            </div>
+
+            {taskData.filter(isInProgress).map((task) => (
+              <a className="task-card" key={task.id} href="/#">
+              {task.title}
+              </a>
+            ))}
+
+            <a className="task-add" href="/#">
+              + New
+            </a>
+          </div>
+
+          <div className="notion-main-tasks-column-list">
+            <div className="task-title">
+              Done
+            </div>
+
+            {taskData.filter(isDone).map((task) => (
+              <a className="task-card" key={task.id} href="/#">
+              {task.title}
+              </a>
+            ))}
+          </div>
+
+        </div>
       </div>
     </div>
   );

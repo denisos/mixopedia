@@ -19,6 +19,8 @@ export default function About() {
         </div>
       </div>
 
+      <button type="button" className="link-button medium">+ New</button>
+
     </div>
 
   );

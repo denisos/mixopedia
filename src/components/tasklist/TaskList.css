@@ -30,6 +30,17 @@
   display: flex;
 }
 
+.menu-bar {
+  margin: 0 96px 0 96px;
+  display: flex;
+  flex-direction: row;
+}
+.menu-bar view-choices {
+  display: flex;
+  flex-direction: row;
+
+}
+
 .notion-record-icon {
   user-select: none; 
   transition: background 20ms ease-in 0s; 
@@ -68,6 +79,8 @@
   white-space: nowrap;
 }
 
+
+/* title  */
 .title-container {
   color: rgb(55, 53, 47);
   font-weight: 700;
@@ -87,11 +100,60 @@
   padding: 3px 2px;
 }
 
+/* title  */
+
 .header-body-text {
   margin-bottom: 12px;
 }
 
-.menu-bar {
-  margin: 0 96px 0 96px;
+
+
+
+
+/* main task lists container */
+.notion-main-tasks-container {
+  display: grid;
+  grid-auto-columns: 260px;
+  grid-auto-flow: column;
+  grid-gap: 6px;
+
+  padding-left: 97px;
+  padding-top: 10px;
 }
 
+.notion-main-tasks-column-list {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 10px;
+  padding: 10px;
+  background-color: rgb(235, 236, 240);
+  border-radius: 4px;
+}
+
+.task-card {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.task-add {
+  text-decoration: none;
+  color: inherit;
+}
+
+.notion-main-tasks-containerOld {
+  display: grid;
+  grid-template-columns: repeat(4, 260px);
+  column-gap: 6px;
+  row-gap: 4px;
+
+  grid-auto-rows: minmax(30px, 30px);
+
+  padding-right: 10px;
+  padding-left: 96px;
+}
+/* https://betterprogramming.pub/creating-trellos-ui-with-css-grid-ed1fbfcd9448 */
+
+/* main task lists container */
