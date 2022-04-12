@@ -19,6 +19,7 @@ import Fetchin from './components/fetchexamples/Fetchin';
 import TaskList from './components/tasklist/TaskList';
 import About from './components/about/About';
 import Forms from './components/forms/Forms';
+import PropsViewerPage from './components/propsViewer/PropsViewerPage';
 
 const PokemonPowerRankings = React.lazy(() =>
   import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));
@@ -74,6 +75,10 @@ function App() {
 
                 <Route path="/formcontrols">
                   <Forms />
+                </Route>
+                
+                <Route path="/propsviewer">
+                  <PropsViewerPage />
                 </Route>
 
                 <Route path="*">

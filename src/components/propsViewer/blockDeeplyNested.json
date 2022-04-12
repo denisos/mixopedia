@@ -1,0 +1,31 @@
+{
+  "id": "8947b61f-4386-4ead-ab52-00200a446140",
+  "title": "Hello, world!",
+  "version": 4.1,
+  "history": {
+    "597b41a1-1e31-4f7d-8763-01f244eaf5f7": {
+      "date": "3 Feb 2022",
+      "changes": {
+        "title": "Hello, world! v2"
+      }
+    },
+    "3d4a2ceb-e787-479e-8087-3aaaf0d16e61": {
+      "date": "29 Jan 2022",
+      "changes": {
+        "icon": "🚧"
+      }
+    },
+    "678f83a8-230d-4c3c-92cf-b3cacafb0a0a": {
+      "date": "22 Jan 2022",
+      "changes": {
+        "public": false
+      }
+    }
+  },
+  "public": true,
+  "properties": {
+    "icon": "🎉",
+    "width": "full",
+    "typeface": "sans-serif"
+  }
+}

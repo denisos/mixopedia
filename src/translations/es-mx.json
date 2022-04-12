@@ -7,7 +7,8 @@
   "nav.context": "Contexto",
   "nav.patterns": "Patronas",
   "nav.useeffect": "useEffect",
-  "nav.tasklist": "Task List",
+  "nav.tasklist": "Lista de tareas",
   "nav.formcontrols": "Forms",
-  "nav.debouncing": "Debouncing"
+  "nav.propsviewer": "Visor de Props",
+  "nav.debouncing": "Antirrebote"
 }

@@ -7,7 +7,8 @@
   "nav.context": "Kontext",
   "nav.patterns": "Muster",
   "nav.useeffect": "useEffect",
-  "nav.tasklist": "Task List",
-  "nav.formcontrols": "Forms",
-  "nav.debouncing": "Debouncing"
+  "nav.tasklist": "Aufgabenliste",
+  "nav.formcontrols": "Formen",
+  "nav.propsviewer": "Requisiten-Viewer",
+  "nav.debouncing": "Entprellung"
 }

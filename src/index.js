@@ -32,3 +32,116 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+
+
+
+
+// import React from "react"
+//
+// CodeSignal does this for us :)
+/*
+const block = {
+  id: "8947b61f-4386-4ead-ab52-00200a446140",
+  title: "Hello, world!",
+  version: 4.0,
+  public: true,
+};
+
+const blockNested = {
+  id: "8947b61f-4386-4ead-ab52-00200a446140",
+  title: "Hello, world!",
+  version: 4.0,
+  public: true,
+  properties: {
+    "icon":"🎉",
+    "width":"full",
+    "typeface":"sans-serif"
+  }
+};
+
+const blockDeeplyNested = {"id":"8947b61f-4386-4ead-ab52-00200a446140","title":"Hello, world!","version":4.1,"history":{"597b41a1-1e31-4f7d-8763-01f244eaf5f7":{"date":"3 Feb 2022","changes":{"title":"Hello, world! v2"}},"3d4a2ceb-e787-479e-8087-3aaaf0d16e61":{"date":"29 Jan 2022","changes":{"icon":"🚧"}},"678f83a8-230d-4c3c-92cf-b3cacafb0a0a":{"date":"22 Jan 2022","changes":{"public":false}}},"public":true,"properties":{"icon":"🎉","width":"full","typeface":"sans-serif"}}
+
+
+
+console.log(">>>> Here is your block:", block);
+
+const isObject = (obj) => obj === Object(obj);
+
+function buildValues(obj) {
+let tmpProps = [];
+for (const prop in obj) {
+  let theValue = obj[prop];
+  if (typeof theValue == "boolean") {
+    theValue = theValue ? "true" :  "false";
+  }
+  tmpProps.push({ key: prop, value: theValue });
+}
+
+return tmpProps;
+}
+
+function PropsViewer({obj}) {
+const [isOpen, setIsOpen ] = React.useState(false);
+const [ objValues, setObjValues ] =  React.useState([]);
+
+React.useEffect(() => {
+  setObjValues(buildValues(obj));
+}, []);
+
+const handleToggleView = () => {
+  setIsOpen(!isOpen);
+}
+
+
+if (!isOpen) {
+  return (
+    <span>
+      <span onClick={handleToggleView}>▶</span>
+      <span>{`{...}`}</span>
+    </span>
+  )
+}
+
+return (
+  <span>
+    <span onClick={handleToggleView}>▼ {'{'}</span>
+    <ul style={{listStyle: "none"}}>
+      {objValues.map((value, idx) => {
+        if (isObject(value.value)) {
+          return (
+            <li key={idx}>{value.key}:
+              <PropsViewer obj={value.value} />
+            </li>
+          )
+        } else {
+          return <li key={idx}>{value.key}: {value.value}</li> 
+        }
+      })}
+    </ul>
+  {'}'}
+  </span>
+);
+}
+
+
+
+
+function App() {
+return (
+  <main>
+    <p>An empty React app to get you started!</p>
+    <pre>
+      <p>◀ ▼ ▲ ▶</p>
+      <p>Check your browser console ⏭</p>
+      
+      <PropsViewer obj={blockDeeplyNested} />
+    </pre>
+  </main>
+);
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+*/

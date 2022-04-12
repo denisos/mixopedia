@@ -1,0 +1,14 @@
+
+.open-close-button {
+  cursor: pointer;
+}
+
+.margin-left { 
+  margin-left: 6px;
+}
+
+.props-list {
+  list-style: none;
+  margin: 4px 0 0 20px;
+  padding: 0;
+}

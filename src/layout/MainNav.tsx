@@ -55,6 +55,11 @@ function MainNav() {
           <FormattedMessage id="nav.formcontrols" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/propsviewer">
+          <FormattedMessage id="nav.propsviewer" />
+        </NavLink>
+      </li>
     </ul>
   )
 }

@@ -56,3 +56,20 @@
   prefer button styled a link over empty anchor for a11y
   https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-is-valid.md
 */
+.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+}
+
+.link-button.medium {
+  padding: 8px;
+}
+
+.link-button:hover {
+  background:rgb(202, 214, 214);
+}
