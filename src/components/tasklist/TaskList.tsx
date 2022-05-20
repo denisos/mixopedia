@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import TaskCard from './TaskCard';
 import { Task } from './Task';
 
@@ -48,17 +48,44 @@ const taskData: Task[] = [
   }
 ];
 
-const isToDo = (task: any) => task.state === 'to-do';
-const isInProgress = (task: any) => task.state === 'doing';
-const isDone = (task: any) => task.state === 'done';
+const isToDo = (task: Task) => task.state === 'to-do';
+const isInProgress = (task: Task) => task.state === 'doing';
+const isDone = (task: Task) => task.state === 'done';
+
+const getNewForwardState = (task: Task) => isToDo(task) ? 'doing' : isInProgress(task) ? 'done' : task.state;
+const getNewBackState = (task: Task) => isDone(task) ? 'doing' : isInProgress(task) ? 'to-do' : task.state;
+
 
 export default function TaskList() {
   const [ tasks, setTasks ] = useState<Task[]>([]);
-  
+
   useEffect(() => {
     setTasks(taskData);
   }, []);
 
+  const handleMoveForward = useCallback((id: string) => {
+    console.log("forward ", id)
+    const newTasks = tasks.map((task: Task): Task => {
+      return {
+        ...task,
+        state: (task.id !== id) ? task.state : getNewForwardState(task)
+      };
+    });
+    setTasks(newTasks);
+  }, [tasks]);
+
+  const handleMoveBack = useCallback((id: string) => {
+    console.log("back ", id);
+    const newTasks = tasks.map((task: Task): Task => {
+      return {
+        ...task,
+        state: (task.id !== id) ? task.state : getNewBackState(task)
+      };
+    });
+    setTasks(newTasks);
+  }, [tasks]);
+
+  
   return (
     <div className="notion-frame">
       <div className="notion-box">
@@ -120,8 +147,12 @@ export default function TaskList() {
                 To-dos
               </div>
 
-              {taskData.filter(isToDo).map((task) => (
-                <TaskCard task={task} />
+              {tasks.filter(isToDo).map((task) => (
+                <TaskCard 
+                  task={task} 
+                  handleMoveForward={handleMoveForward}
+
+                />
               ))}
 
               <a className="task-add" href="/#">
@@ -134,8 +165,12 @@ export default function TaskList() {
                 In Progress
               </div>
 
-              {taskData.filter(isInProgress).map((task) => (
-                <TaskCard task={task} />
+              {tasks.filter(isInProgress).map((task) => (
+                <TaskCard 
+                  task={task} 
+                  handleMoveForward={handleMoveForward}
+                  handleMoveBack={handleMoveBack}
+                />
               ))}
 
               <a className="task-add" href="/#">
@@ -148,8 +183,11 @@ export default function TaskList() {
                 Done
               </div>
 
-              {taskData.filter(isDone).map((task) => (
-                <TaskCard task={task} />
+              {tasks.filter(isDone).map((task) => (
+                <TaskCard 
+                  task={task} 
+                  handleMoveBack={handleMoveBack}
+                />
               ))}
             </div>
 
