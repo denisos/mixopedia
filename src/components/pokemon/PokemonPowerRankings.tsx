@@ -36,7 +36,7 @@ export default function PokemonPowerRankings() {
   //  regenerating pokemonsWithPower ever render and because React Memo uses triple equals, then 
   //  the references are different and the table is rerenderd 
   // the solution is to also use: React.useMemo (with React.memo)
-  //  to only regenerate (and change) pokemonsWithPower list wref hen pokemons change (not every render)
+  //  to only regenerate (and change) pokemonsWithPower list ref when pokemons change (not every render)
   //
   // Jack says "useMemo is a weird name" because it puts the emphasis on momoization and thus imples 
   //  performancem but Jack advises when you need to compute a value then think of using useMemo

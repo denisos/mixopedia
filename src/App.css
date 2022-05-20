@@ -7,7 +7,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-}
+} 
 
 .app {
   font-family: sans-serif;

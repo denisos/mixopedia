@@ -6,7 +6,7 @@
   border: none;
   white-space: nowrap;
   vertical-align: middle;
-}
+} 
 
 .btnChildren {
   display: flex;
@@ -17,22 +17,22 @@
 .primary {
   background-color: rgb(91, 91, 238);
   color: white;
-}
+} 
 
 .primary:hover,
 .primary:active {
   background-color: rgb(135, 135, 240);
-}
+} 
 
 .primary.disabled {
   background-color: red;
   cursor: default;
-}
+} 
 
 .secondary {
   background-color: white;
   color: black;
-}
+} 
 
 .large {
   min-width: 100px;
@@ -50,7 +50,7 @@
   min-width: 60px;
   padding: 6px 18px;
   font-size: 12px;
-}
+} 
 
 /*
   prefer button styled a link over empty anchor for a11y

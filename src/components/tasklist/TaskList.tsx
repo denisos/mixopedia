@@ -1,6 +1,10 @@
+import { useEffect, useState } from 'react';
+import TaskCard from './TaskCard';
+import { Task } from './Task';
+
 import './TaskList.css'
 
-const taskData = [
+const taskData: Task[] = [
   {
     id: 'ab1788998zz',
     title: 'wake up',
@@ -49,6 +53,12 @@ const isInProgress = (task: any) => task.state === 'doing';
 const isDone = (task: any) => task.state === 'done';
 
 export default function TaskList() {
+  const [ tasks, setTasks ] = useState<Task[]>([]);
+  
+  useEffect(() => {
+    setTasks(taskData);
+  }, []);
+
   return (
     <div className="notion-frame">
       <div className="notion-box">
@@ -111,9 +121,7 @@ export default function TaskList() {
               </div>
 
               {taskData.filter(isToDo).map((task) => (
-                <a className="task-card" key={task.id} href="/#">
-                {task.title}
-                </a>
+                <TaskCard task={task} />
               ))}
 
               <a className="task-add" href="/#">
@@ -127,9 +135,7 @@ export default function TaskList() {
               </div>
 
               {taskData.filter(isInProgress).map((task) => (
-                <a className="task-card" key={task.id} href="/#">
-                {task.title}
-                </a>
+                <TaskCard task={task} />
               ))}
 
               <a className="task-add" href="/#">
@@ -143,9 +149,7 @@ export default function TaskList() {
               </div>
 
               {taskData.filter(isDone).map((task) => (
-                <a className="task-card" key={task.id} href="/#">
-                {task.title}
-                </a>
+                <TaskCard task={task} />
               ))}
             </div>
 
