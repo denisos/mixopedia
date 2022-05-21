@@ -55,6 +55,14 @@ const isDone = (task: Task) => task.state === 'done';
 const getNewForwardState = (task: Task) => isToDo(task) ? 'doing' : isInProgress(task) ? 'done' : task.state;
 const getNewBackState = (task: Task) => isDone(task) ? 'doing' : isInProgress(task) ? 'to-do' : task.state;
 
+const updateTaskState = (tasks: Task[], id: string, mover: (task: Task) => string): Task[] => {
+  return tasks.map((task: Task): Task => {
+    return {
+      ...task,
+      state: (task.id !== id) ? task.state : mover(task)
+    };
+  });
+}
 
 export default function TaskList() {
   const [ tasks, setTasks ] = useState<Task[]>([]);
@@ -65,27 +73,17 @@ export default function TaskList() {
 
   const handleMoveForward = useCallback((id: string) => {
     console.log("forward ", id)
-    const newTasks = tasks.map((task: Task): Task => {
-      return {
-        ...task,
-        state: (task.id !== id) ? task.state : getNewForwardState(task)
-      };
-    });
-    setTasks(newTasks);
+
+    setTasks(updateTaskState(tasks, id, getNewForwardState));
   }, [tasks]);
 
   const handleMoveBack = useCallback((id: string) => {
     console.log("back ", id);
-    const newTasks = tasks.map((task: Task): Task => {
-      return {
-        ...task,
-        state: (task.id !== id) ? task.state : getNewBackState(task)
-      };
-    });
-    setTasks(newTasks);
+
+    setTasks(updateTaskState(tasks, id, getNewBackState));
   }, [tasks]);
 
-  
+
   return (
     <div className="notion-frame">
       <div className="notion-box">
@@ -97,7 +95,7 @@ export default function TaskList() {
             <div className="notion-header-container-title">
               <div className="notion-record-icon notion-focusable" role="button" aria-disabled="false" tabIndex={0}>
                 <div className="icon-image-container">
-                  <span className="icon-image" role="image" aria-label="✔️">✔️</span>
+                  <span className="icon-image" aria-label="✔️">✔️</span>
                 </div>
               </div>
 
@@ -151,7 +149,7 @@ export default function TaskList() {
                 <TaskCard 
                   task={task} 
                   handleMoveForward={handleMoveForward}
-
+                  key={task.id}
                 />
               ))}
 
@@ -170,6 +168,7 @@ export default function TaskList() {
                   task={task} 
                   handleMoveForward={handleMoveForward}
                   handleMoveBack={handleMoveBack}
+                  key={task.id}
                 />
               ))}
 
@@ -187,6 +186,7 @@ export default function TaskList() {
                 <TaskCard 
                   task={task} 
                   handleMoveBack={handleMoveBack}
+                  key={task.id}
                 />
               ))}
             </div>
@@ -206,9 +206,7 @@ export default function TaskList() {
               </div>
 
               {taskData.filter(isToDo).map((task) => (
-                <a className="task-card" key={task.id} href="/#">
-                {task.title}
-                </a>
+                <TaskCard key={task.id} task={task} />
               ))}
 
               <a className="task-add" href="/#">
@@ -222,9 +220,7 @@ export default function TaskList() {
               </div>
 
               {taskData.filter(isInProgress).map((task) => (
-                <a className="task-card" key={task.id} href="/#">
-                {task.title}
-                </a>
+                <TaskCard key={task.id} task={task} />
               ))}
 
               <a className="task-add" href="/#">
@@ -238,9 +234,7 @@ export default function TaskList() {
               </div>
 
               {taskData.filter(isDone).map((task) => (
-                <a className="task-card" key={task.id} href="/#">
-                {task.title}
-                </a>
+                <TaskCard key={task.id} task={task} />
               ))}
 
             </div>

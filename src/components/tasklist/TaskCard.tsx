@@ -8,8 +8,9 @@ interface TaskCardProps {
 
 export default function TaskCard(props: TaskCardProps) {
   const { task, handleMoveForward, handleMoveBack } = props;
+
   return (
-    <div className="task-card" key={task.id} >
+    <div className="task-card" >
       {task.title}
 
       <div>
