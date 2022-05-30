@@ -10,5 +10,6 @@
   "nav.tasklist": "Aufgabenliste",
   "nav.formcontrols": "Formen",
   "nav.propsviewer": "Requisiten-Viewer",
-  "nav.debouncing": "Entprellung"
+  "nav.debouncing": "Entprellung",
+  "nav.tstypings": "TsTypings"
 }

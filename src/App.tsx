@@ -20,6 +20,7 @@ import TaskList from './components/tasklist/TaskList';
 import About from './components/about/About';
 import Forms from './components/forms/Forms';
 import PropsViewerPage from './components/propsViewer/PropsViewerPage';
+import TsTypings from './components/tstypings/TsTypings';
 
 const PokemonPowerRankings = React.lazy(() =>
   import(/* webpackChunkName: "PokemonPowerRankings" */ './components/pokemon/PokemonPowerRankings'));
@@ -79,6 +80,10 @@ function App() {
                 
                 <Route path="/propsviewer">
                   <PropsViewerPage />
+                </Route>
+
+                <Route path="/tstypings">
+                  <TsTypings />
                 </Route>
 
                 <Route path="*">

@@ -60,6 +60,11 @@ function MainNav() {
           <FormattedMessage id="nav.propsviewer" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/tstypings">
+          <FormattedMessage id="nav.tstypings" />
+        </NavLink>
+      </li>
     </ul>
   )
 }

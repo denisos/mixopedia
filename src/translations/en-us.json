@@ -10,5 +10,6 @@
   "nav.tasklist": "Task List",
   "nav.formcontrols": "Forms",
   "nav.propsviewer": "Props Viewer",
-  "nav.debouncing": "Debouncing"
+  "nav.debouncing": "Debouncing",
+  "nav.tstypings": "TsTypings"
 }

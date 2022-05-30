@@ -10,5 +10,6 @@
   "nav.tasklist": "Lista de tareas",
   "nav.formcontrols": "Forms",
   "nav.propsviewer": "Visor de Props",
-  "nav.debouncing": "Antirrebote"
+  "nav.debouncing": "Antirrebote",
+  "nav.tstypings": "TsTypings"
 }
