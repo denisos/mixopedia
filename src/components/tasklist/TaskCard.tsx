@@ -1,5 +1,5 @@
 
-import { Task } from './Task';
+import { Task } from './types';
 interface TaskCardProps {
   task: Task;
   handleMoveForward?: (id: string) => void;

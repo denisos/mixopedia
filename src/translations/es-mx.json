@@ -11,5 +11,6 @@
   "nav.formcontrols": "Forms",
   "nav.propsviewer": "Visor de Props",
   "nav.debouncing": "Antirrebote",
-  "nav.tstypings": "TsTypings"
+  "nav.tstypings": "TsTypings",
+  "nav.blockrenderer": "Block Render"
 }

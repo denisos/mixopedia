@@ -1,8 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 import TaskCard from './TaskCard';
-import { Task } from './Task';
-
+import { Block, Task } from './types';
+import Link from './Link';
+import Header from './Header';
+import ToDo from './ToDo';
 import './TaskList.css'
+
+const blockTypeMap = {
+  "page": Link,
+  "to_do": ToDo,
+  "sub_sub_header": Header
+}
+
 
 const taskData: Task[] = [
   {
@@ -48,6 +57,56 @@ const taskData: Task[] = [
   }
 ];
 
+const mockData: Block[] = [
+  {
+    id: "123",
+    type: "page",
+    version: 2,
+    properties: {
+      title: [["me.com site"]],
+      href: "https://www.me.com"
+    },
+    content: [],
+    parent: "101"
+  },
+  {
+    id: "38396afd-791b-4a7b-aca2-244a44ef4726",
+    type: "sub_sub_header",
+    version: 1,
+    properties: {
+      title: [
+        ["bananasDD"]
+        // ,[
+        //     [
+        //       "b"
+        //     ],
+        //     [
+        //       "_"
+        //     ]
+        // ]
+      ],
+
+    },
+    content: [],
+    parent: "101"
+  },
+  {
+    id: "38396afd-791b-4a7b-aca2-111111",
+    type: "to_do",
+    version: 12,
+    properties: {
+      "title": [
+        [
+          "make breakfast"
+        ]
+      ],
+      checked: true
+    },
+    content: [],
+    parent: "101"
+  }
+]
+
 const isToDo = (task: Task) => task.state === 'to-do';
 const isInProgress = (task: Task) => task.state === 'doing';
 const isDone = (task: Task) => task.state === 'done';
@@ -66,6 +125,8 @@ const updateTaskState = (tasks: Task[], id: string, mover: (task: Task) => strin
 
 export default function TaskList() {
   const [ tasks, setTasks ] = useState<Task[]>([]);
+
+  const [ data, setData ] = useState(mockData);
 
   useEffect(() => {
     setTasks(taskData);
@@ -241,6 +302,18 @@ export default function TaskList() {
           </div>
 
         </div>
+
+      </div>
+
+      <div className="block-types-container">
+        <h3>Rendering some block types such as link, header and to-do</h3>
+
+        {data.map((block) => {
+          const Component = blockTypeMap[block.type];
+
+          return <Component key={block.id} block={block} />
+        })
+        }
 
       </div>
     </div>

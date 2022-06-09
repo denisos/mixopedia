@@ -65,6 +65,11 @@ function MainNav() {
           <FormattedMessage id="nav.tstypings" />
         </NavLink>
       </li>
+      <li>
+        <NavLink exact to="/blockrenderer">
+          <FormattedMessage id="nav.blockrenderer" />
+        </NavLink>
+      </li>
     </ul>
   )
 }

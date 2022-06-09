@@ -188,3 +188,8 @@ https://betterprogramming.pub/creating-trellos-ui-with-css-grid-ed1fbfcd9448 */
   border-radius: 4px;
   padding: 10px;
 }
+
+.block-types-container {
+  width: 900px;
+  margin: 20px 0;
+}

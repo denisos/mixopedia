@@ -11,5 +11,6 @@
   "nav.formcontrols": "Formen",
   "nav.propsviewer": "Requisiten-Viewer",
   "nav.debouncing": "Entprellung",
-  "nav.tstypings": "TsTypings"
+  "nav.tstypings": "TsTypings",
+  "nav.blockrenderer": "Block Render"
 }

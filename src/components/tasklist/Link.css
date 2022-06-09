@@ -1,0 +1,32 @@
+.link-type {
+  width: 100%
+}
+
+.link-type-link {
+  color: black;
+  text-decoration: none;
+}
+
+.link-type-link :hover {
+  background: rgba(55,53,47,0.08);
+}
+
+.link-type-link-icons {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.pageLinkIndicator {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.link-type-title {
+  border-bottom: 1px solid rgba(55, 53, 47, 0.16)
+}
