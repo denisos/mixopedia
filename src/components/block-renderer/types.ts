@@ -15,6 +15,7 @@ export type ActionBlock = {
   | 'presence-enter' | 'presence-visit';
   visits?: number;
   blockId?: string;
+  name?: string;
 }
 
 export type BlockType = ActionBlock['type'] | ContentBlock['type'];

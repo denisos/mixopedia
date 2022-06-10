@@ -10,7 +10,7 @@ export default function Block({ block }: BlockProps) {
   return (
     <div id={id}>
       <div>{block.content && block.content}
-      {visits && <span> {visits > 0 && visits}</span>}
+      {visits !== undefined && <span> {visits > 0 && visits}</span>}
       </div>
 
     </div>

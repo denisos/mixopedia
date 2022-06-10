@@ -116,7 +116,7 @@ const events = [
   },
 ];
 
-const DELAY_MS = 2000;
+const DELAY_MS = 200;
 
 window.Socket = {};
 window.Socket.listen = (callback) => {
@@ -145,35 +145,30 @@ window.Socket.listen = (callback) => {
 interface BlockRendererState {
   title: string;
   blocks: ActionBlock[];
+  visitors: string[];
 }
 
 const initialState: BlockRendererState = {
   title: '',
-  blocks: []
+  blocks: [],
+  visitors: []
 }
 
 type ACTIONTYPE = ActionBlock | ContentBlock;
 
-// if (action.type === 'presence-visit') {
-//   return {
-//     ...block,
-//     visits: (block.visits !== undefined) ? block.visits++ : 0
-//   }
-// } 
-// just an update so replace
 
-function updateBlocks(blocks: ActionBlock[], action: ActionBlock) {
-  const newBlocks = blocks.map((block) => {
-    if (block.id === action.id) {
-      return action;
-    } else {
-      return block;
-    }
-  });
+// function updateBlocks(blocks: ActionBlock[], action: ActionBlock) {
+//   const newBlocks = blocks.map((block) => {
+//     if (block.id === action.id) {
+//       return action;
+//     } else {
+//       return block;
+//     }
+//   });
 
-  console.log("newBlocks ", newBlocks)
-  return newBlocks;
-}
+//   console.log("newBlocks ", newBlocks)
+//   return newBlocks;
+// }
 
 function reducer(state: typeof initialState, action: ACTIONTYPE): BlockRendererState {
   console.log('reducer', action)
@@ -192,23 +187,32 @@ function reducer(state: typeof initialState, action: ACTIONTYPE): BlockRendererS
     case 'block-update':
       return {
         ...state,
-        blocks: state.blocks.map((block: ActionBlock) => (block.id === action.id) ? action : block)
+        blocks: state.blocks.map((block: ActionBlock) => 
+          (block.id !== action.id) ? block : { ...block, ...action })
       }
     case 'presence-visit':
       return {
         ...state,
-        blocks: state.blocks.map((block: ActionBlock) => 
+        blocks: state.blocks.map((block: ActionBlock) =>
           (block.id !== action.blockId) ? block : {
             ...block,
             visits: (block.visits !== undefined) ? block.visits++ : 0
           })
       }
+      case 'presence-enter':
+        return {
+          ...state,
+          visitors: state.visitors.includes(action.id) ?
+            [...state.visitors] :
+            [...state.visitors.concat([action.name as string])]
+
+        }
   }
   return state;
 }
 
 export default function BlockRenderer() {
-  const [ {title, blocks}, dispatch ] = useReducer(reducer, initialState);
+  const [ {title, blocks, visitors}, dispatch ] = useReducer(reducer, initialState);
 
   useEffect(() => {
     if (window.Socket?.listen) {
@@ -222,6 +226,9 @@ export default function BlockRenderer() {
   return (
     <div className="block-container">
       <h1>{title}</h1>
+      <ul style={{display:"flex"}}>
+        {visitors.map((visitor:string, idx) => <li key={idx}>{visitor}</li>)}
+      </ul>
 
       {blocks.map((block) => <Block key={block.id} block={block} />)}
     </div>
